@@ -27,19 +27,6 @@ provider "azurerm" {
 # }
 
 
-#############################################################################
-resource "azurerm_storage_account" "storage" {
-  name                     = var.adls_name
-  resource_group_name      = var.rg_name
-  location                 = var.rg_location
-  account_tier             = "Standard"
-  account_replication_type = "LRS"
-  
-  
-  
-  account_kind             = "StorageV2"
-  is_hns_enabled           = "true"
-}
 
 #############################################################################
 resource "azurerm_databricks_workspace" "azure_db" {

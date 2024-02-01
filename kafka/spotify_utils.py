@@ -112,6 +112,6 @@ class SpotifyUtils:
         
         # merge tracks data & audio features
         song_df = tracks_df.merge(audio_featuress_df, on="song_id")
-        song_df['release_date'] = pd.to_datetime(song_df['release_date'], format="%Y-%m-%d")
+        song_df['release_date'] = pd.to_datetime(song_df['release_date'], format="mixed", errors='coerce')
         
         return song_df
