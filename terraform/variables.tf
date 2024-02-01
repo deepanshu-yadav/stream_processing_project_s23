@@ -163,10 +163,10 @@ variable "vm_os_disk_caching" {
 }
 
 ## Extensions
-variable scfile{
-    type = string
-    default = "run_kafka.sh"
-}
+# variable scfile{
+#     type = string
+#     default = "run_kafka.sh"
+# }
 
 # variable "vm_subnetid" {
 #   type        = string

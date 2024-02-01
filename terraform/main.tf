@@ -71,19 +71,49 @@ module "kafka_vm" {
 ### Extensions
 
 
-resource "azurerm_virtual_machine_extension" "vmext" {
-    resource_group_name     = "${var.rg_name}"
-    location                = "${var.rg_location}"
-    name                    = "${var.kafka_vm_name}-vmext"
+# resource "azurerm_virtual_machine_extension" "vmext" {
+#     resource_group_name     = "${var.rg_name}"
+#     location                = "${var.rg_location}"
+#     name                    = "${var.kafka_vm_name}-vmext"
 
-    virtual_machine_name = "${var.kafka_vm_name}"
-    publisher            = "Microsoft.Azure.Extensions"
-    type                 = "CustomScript"
-    type_handler_version = "2.0"
+#     virtual_machine_name = "${var.kafka_vm_name}"
+#     publisher            = "Microsoft.Azure.Extensions"
+#     type                 = "CustomScript"
+#     type_handler_version = "2.0"
 
-    protected_settings = <<PROT
-    {
-        "script": "${base64encode(file(var.scfile))}"
-    }
-    PROT
-}
+#     protected_settings = <<PROT
+#     {
+#         "script": "${base64encode(file(var.scfile))}"
+#     }
+#     PROT
+# }
+
+
+# resource "azurerm_virtual_machine_extension" "kafka_vm_ext" {
+#   name                 = "customScript"
+#   virtual_machine_id   =  module.kafka_vm.id
+#   publisher            = "Microsoft.Compute"
+#   type                 = "CustomScriptExtension"
+#   type_handler_version = "1.10"
+
+#   settings = <<SETTINGS
+#     {
+#         "script": "${var.scfile}"
+#     }
+# SETTINGS
+# }
+
+# resource "azurerm_virtual_machine_extension" "kafka_extension" {
+#   name                 = "customScript"
+#   virtual_machine_id   = azurerm_windows_virtual_machine.kafka_vm.id
+#   publisher            = "Microsoft.Compute"
+#   type                 = "CustomScriptExtension"
+#   type_handler_version = "1.10"
+
+#   settings = <<SETTINGS
+#     {
+#         "script": "${var.kafka_extension_script}"
+#     }
+# SETTINGS
+
+# }

@@ -94,3 +94,18 @@ resource "azurerm_linux_virtual_machine" "linux_vm" {
 
 
 }
+
+resource "azurerm_virtual_machine_extension" "linux_vm" {
+  name                 = "hostname_"
+  virtual_machine_id   = azurerm_linux_virtual_machine.linux_vm.id
+  publisher            = "Microsoft.Azure.Extensions"
+  type                 = "CustomScript"
+  type_handler_version = "2.0"
+
+   settings = <<SETTINGS
+    {
+        "script": "${base64encode(file("${path.module}/run_kafka.sh"))}" 
+    }
+SETTINGS
+
+}
