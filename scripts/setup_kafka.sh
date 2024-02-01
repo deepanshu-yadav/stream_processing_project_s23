@@ -54,7 +54,7 @@ echo "Created topic $KAFKA_EVENTS_TOPIC on $KAFKA_BROKER_ADDRESS:$KAFKA_BROKER_P
 
 echo "Kafka and Zookeeper installation completed."
 
-sudo apt install pip
+sudo apt install -y pip
 
 pip install -r ../requirements.txt
 
@@ -63,7 +63,3 @@ echo "Installed python requirments."
 echo "Running python script."
 
 cd kafka/ && python3 producer.py
-
-
-
-
