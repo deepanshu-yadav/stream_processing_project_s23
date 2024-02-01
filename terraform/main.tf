@@ -66,3 +66,24 @@ module "kafka_vm" {
   vm_os_disk_strg_type = var.vm_os_disk_strg_type
   vm_os_disk_caching   = var.vm_os_disk_caching
 }
+
+
+### Extensions
+
+
+resource "azurerm_virtual_machine_extension" "vmext" {
+    resource_group_name     = "${var.rg_name}"
+    location                = "${var.rg_location}"
+    name                    = "${var.kafka_vm_name}-vmext"
+
+    virtual_machine_name = "${var.kafka_vm_name}"
+    publisher            = "Microsoft.Azure.Extensions"
+    type                 = "CustomScript"
+    type_handler_version = "2.0"
+
+    protected_settings = <<PROT
+    {
+        "script": "${base64encode(file(var.scfile))}"
+    }
+    PROT
+}
