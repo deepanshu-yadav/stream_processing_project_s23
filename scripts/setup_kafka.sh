@@ -62,4 +62,5 @@ echo "Installed python requirments."
 
 echo "Running python script."
 
-cd kafka/ && python3 producer.py
+cd kafka/ && python3 producer.py && >> /opt/log.out 2>&1 &
+disown -h %1
