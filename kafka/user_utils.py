@@ -90,9 +90,7 @@ class UserUtils:
         user_samples = users_df.iloc[user_idx].reset_index(drop=True)
 
         # songs listened
-        song_ids = songs_df.loc[
-            songs_df["release_date"] < interaction_date, "song_id"
-        ].tolist()
+        song_ids = songs_df.loc[:, "song_id"].tolist()
         song_id_samples = [random.choice(song_ids) for i in range(len(user_samples))]
 
         # listen timestamp

@@ -51,7 +51,7 @@ if __name__ == "__main__":
     dates_list = dates_df.to_dict(orient="records")
     print("Generated Users data")
 
-    print("Started generating events")
+    print("Started generating events len is {} ".format(len(songs_df)))
     # iterate every date to generate user*song interaction data
     print("The total data is {}".format(len(dates_list)))
     for row in dates_list:
