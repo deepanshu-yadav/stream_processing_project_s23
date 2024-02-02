@@ -62,5 +62,5 @@ echo "Installed python requirments."
 
 echo "Running python script."
 
-cd /opt/stream_project/kafka/ && python3 producer.py && >> /opt/log.out 2>&1 &
+cd /opt/stream_project/kafka/ && sudo python3 producer.py && >> /opt/log.out 2>&1 &
 disown -h %1
