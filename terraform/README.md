@@ -7,27 +7,30 @@ This template provisions a single VM and Azure Databricks workspace. Major compo
 - NSGs for Databricks and Kafka subnets
 
 ## Folder Structure
-.
-├── README.md
-├── data.tf
-├── images
-│   ├── resources.png
-├── main.tf
-├── modules
-│   └── general_vm
-│       ├── main.tf
-│       ├── outputs.tf
-│       ├── providers.tf
-│       ├── run_kafka.sh
-│       └── variables.tf
-├── outputs.tf
-├── providers.tf
-├── terraform.tfstate
-├── terraform.tfstate.backup
-├── terraform.tfvars
-├── variables.tf
-├── vnet.tf
-└── workspace.tf
+
+```
+    .
+    ├── README.md
+    ├── data.tf
+    ├── images
+    │   ├── resources.png
+    ├── main.tf
+    ├── modules
+    │   └── general_vm
+    │       ├── main.tf
+    │       ├── outputs.tf
+    │       ├── providers.tf
+    │       ├── run_kafka.sh
+    │       └── variables.tf
+    ├── outputs.tf
+    ├── providers.tf
+    ├── terraform.tfstate
+    ├── terraform.tfstate.backup
+    ├── terraform.tfvars
+    ├── variables.tf
+    ├── vnet.tf
+    └── workspace.tf
+```
 
 `terraform.tfvars` is provided as reference variable values, you should change it based on your need.
 
