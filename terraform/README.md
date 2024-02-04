@@ -1,6 +1,6 @@
-## ADB - Kafka Single VM Demo environment
+## Infrastructure setup
 
-This template provisions a single VM and Azure Databricks workspace. Major components to deploy include:
+This piece of code provisions a single VM and Azure Databricks workspace. Major components to deploy include:
 - 1 Vnet with 3 subnets (2 for Databricks, 1 for Kafka VM)
 - 1 Azure VM (to host Kafka and Zookeeper services), with port 9092 exposed to other devices in same VNet (allowed by default NSG rules).
 - 1 VNet injected Azure Databricks Workspace
