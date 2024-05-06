@@ -1,5 +1,6 @@
 # Processing Real Time data from spotify using kafka and data bricks.
 
+![alt text](images/Azure.svg?raw=true)
 This project gets data from spotify API ingest into a kafka broker. Spark streaming can be connected to this broker
 and process it. 
 This project can be setup on your local computer or even deployed to azure.
